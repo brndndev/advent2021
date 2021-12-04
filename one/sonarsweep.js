@@ -2073,32 +2073,32 @@
 
 const fs = require("fs");
 
-const lines = fs
+const windows = fs
     .readFileSync("copy.txt", { encoding: "utf-8" })
     .split("\n")
     .filter((x) => Boolean(x))
     .map((x) => parseInt(x));
 
-console.log(lines);
+console.log(windows);
 
-let increased = 0;
+let depth = 0;
 
-for (let i = 1; i < lines.length; i++) {
-    const last = lines[i-1];
-    const current = lines[i];
+for (let i = 1; i < windows.length; i++) {
+    const last = windows[i-1];
+    const current = windows[i];
     if (current > last) {
-        increased++
+        depth++
     }
 }
 
 
-let increased2 = 0;
+let depth2 = 0;
 
-for (let i = 3; i < lines.length; i++) {
-    const last = lines[i - 1] + lines[i - 2] + lines[i - 3];
-    const current = lines[i] + lines[i - 1] + lines[i - 2];
+for (let i = 3; i < windows.length; i++) {
+    const last = windows[i - 1] + windows[i - 2] + windows[i - 3];
+    const current = windows[i] + windows[i - 1] + windows[i - 2];
     if (current > last) {
-        increased2++
+        depth2++
     }
 }
-console.log(increased2);
+console.log(depth2);
