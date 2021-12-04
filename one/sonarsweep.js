@@ -2091,6 +2091,7 @@ for (let i = 1; i < windows.length; i++) {
     }
 }
 
+console.log(depth)
 
 let depth2 = 0;
 
@@ -2101,4 +2102,4 @@ for (let i = 3; i < windows.length; i++) {
         depth2++
     }
 }
-console.log(depth2);
+console.log(depth2)
